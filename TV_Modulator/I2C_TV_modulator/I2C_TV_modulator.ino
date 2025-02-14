@@ -142,7 +142,7 @@ void mod_changeChannel(byte channel, boolean testMode) {
 
   Wire.beginTransmission(MOD_ADDRESS);
   Wire.write(fm);
-  Wire.write(fl);
+  Wire.write(fl | 0x01);
   Wire.endTransmission();
 }
 
