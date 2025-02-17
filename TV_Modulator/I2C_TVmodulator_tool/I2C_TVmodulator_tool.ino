@@ -103,8 +103,8 @@ void sendData(byte* b2send) {
 }
 
 void loop() {
-    if (Serial.available() > 0) {    // is a character available?
-      rx_byte = Serial.read();       // get the character
+    if (Serial.available() > 0) {    
+      rx_byte = Serial.read();      
     
       if (rx_byte != '\n') {
       // a character of the string was received
