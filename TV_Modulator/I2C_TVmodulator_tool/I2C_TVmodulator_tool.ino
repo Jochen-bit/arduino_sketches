@@ -18,11 +18,13 @@
 
 void setup() {
   Serial.begin(9600);
+  Serial.println(" ");
   Serial.println("I2C-Sende-Tool für MC44353 TV-Modulator an Adresse 0x65");
   Serial.println("Eingabesyntax: 4 Blöcke von je 8 Nullen und Einsen!");
-  Serial.println("Sollen nur 2 Blocke übertragen werden, die letzten beiden Blöcke mit '0' angeben.");
-  Serial.println("z.B. schalten folgende 2 Byte den Modulator auf Kanal 23 mit Testgenerator ein:");
-  Serial.println("01011110 01110111 0 0");
+  Serial.println("z.B. schalten folgende 4 Byte den Modulator auf Kanal 23 mit Testgenerator ein:");
+  Serial.println("10001000 01001000 01011110 01110111 (C1/C0/FM/FL entspricht Decimal 136,72,94,119)");
+  Serial.println("Sollen nur 2 Blöcke übertragen werden: die letzten beiden Blöcke mit '0' angeben, z.B.:");
+  Serial.println("01011110 00110101 0 0 (Eingabe mit Return abschließen!) = Testmodulator off"); 
   Wire.begin();
 }
 
